@@ -12,12 +12,15 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   maxWidth: 385,
-  width:"70%",
-//   height: "214px",
+  width: "70%",
+  //   height: "214px",
   bgcolor: "background.paper",
   boxShadow: 24,
-  borderRadius:"10px",
+  borderRadius: "10px",
   p: 4,
+  "&:focus-visible": {
+    outline: "none",
+  },
 };
 
 export default function BasicModal({ children, setOpen, open }) {
