@@ -1,6 +1,6 @@
 import "./App.css";
 import TodoList from "./component/todo";
-import Tabs from "./component/tab";
+// import Tabs from "./component/tab";
 
 function App() {
   return (
