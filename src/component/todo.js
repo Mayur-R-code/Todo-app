@@ -8,6 +8,8 @@ import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import FilterAltOffIcon from "@mui/icons-material/FilterAltOff";
 import ClearIcon from "@mui/icons-material/Clear";
 import BasicModal from "./modal";
+import Swal from "sweetalert2";
+import toast, { Toaster } from "react-hot-toast";
 
 const TodoList = () => {
   const [todos, setTodos] = useState(() => {
@@ -38,8 +40,10 @@ const TodoList = () => {
       new_todo[editIndex] = inputValue;
       setTodos(new_todo);
       setEditIndex(null);
+      toast.success("Task updated successfully");
     } else {
       setTodos([...todos, inputValue]);
+      toast.success("Task added successfully");
       setFormIsEdit(false);
     }
     setInputValue("");
@@ -49,9 +53,23 @@ const TodoList = () => {
 
   // Handle remove Todo...
   const handleDeleteTodo = (index) => {
-    const new_todo = [...todos];
-    new_todo.splice(index, 1);
-    setTodos(new_todo);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want delete?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes",
+      cancelButtonText: "Cancel",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const new_todo = [...todos];
+        new_todo.splice(index, 1);
+        setTodos(new_todo);
+        toast.success("Task delete successfully");
+      }
+    });
   };
 
   // Handle edit Todo...
@@ -287,6 +305,7 @@ const TodoList = () => {
           />
         </Box>
       </Box>
+      <Toaster position="top-right" reverseOrder={false} />
     </>
   );
 };
