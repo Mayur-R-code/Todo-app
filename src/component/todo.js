@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import SearchIcon from "@mui/icons-material/Search";
-import { InputAdornment, TablePagination } from "@mui/material";
-import FilterAltIcon from "@mui/icons-material/FilterAlt";
-import FilterAltOffIcon from "@mui/icons-material/FilterAltOff";
-import ClearIcon from "@mui/icons-material/Clear";
+// import SearchIcon from "@mui/icons-material/Search";
+import {TablePagination } from "@mui/material";
+// import FilterAltIcon from "@mui/icons-material/FilterAlt";
+// import FilterAltOffIcon from "@mui/icons-material/FilterAltOff";
+// import ClearIcon from "@mui/icons-material/Clear";
 import BasicModal from "./modal";
 import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
@@ -19,7 +19,7 @@ const TodoList = () => {
   const [inputValue, setInputValue] = useState("");
   const [editIndex, setEditIndex] = useState(null);
   const [filterValue, setFilterValue] = useState("");
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [openModal, setOpenModal] = useState(false);
@@ -85,7 +85,7 @@ const TodoList = () => {
     todo.toLowerCase().includes(filterValue.toLowerCase())
   );
 
-  const handleChangePage = (event, newPage) => {
+  const handleChangePage = ( newPage) => {
     setPage(newPage);
   };
 
