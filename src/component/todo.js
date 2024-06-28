@@ -38,7 +38,7 @@ const TodoList = () => {
       setEditIndex(null);
       toast.success("Task updated successfully");
     } else {
-      setTodos([...todos, inputValue]);
+      setTodos([inputValue,...todos]);
       toast.success("Task added successfully");
       setFormIsEdit(false);
     }
