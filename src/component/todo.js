@@ -2,11 +2,7 @@ import React, { useEffect, useState } from "react";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-// import SearchIcon from "@mui/icons-material/Search";
-import {TablePagination } from "@mui/material";
-// import FilterAltIcon from "@mui/icons-material/FilterAlt";
-// import FilterAltOffIcon from "@mui/icons-material/FilterAltOff";
-// import ClearIcon from "@mui/icons-material/Clear";
+import { TablePagination } from "@mui/material";
 import BasicModal from "./modal";
 import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
@@ -85,7 +81,7 @@ const TodoList = () => {
   //   todo.toLowerCase().includes(filterValue.toLowerCase())
   // );
 
-  const handleChangePage = ( newPage) => {
+  const handleChangePage = (_event,newPage) => {
     setPage(newPage);
   };
 
@@ -109,7 +105,6 @@ const TodoList = () => {
           margin: "0 auto",
           display: "flex",
           flexDirection: "column",
-          // background: "#FFFFFF",
           padding: "15px",
           gap: "25px",
         }}
@@ -152,17 +147,6 @@ const TodoList = () => {
             {formIsEdit ? "Save" : "+ Add task"}
           </Button>
         </BasicModal>
-        {/* <Box
-          onClick={() => setOpen(!open)}
-          sx={{
-            display: "flex",
-            width: "86%",
-            justifyContent: "flex-end",
-            cursor: "pointer",
-          }}
-        >
-          {!open ? <FilterAltIcon /> : <FilterAltOffIcon />}
-        </Box> */}
         <Box
           component="table"
           sx={{
@@ -172,42 +156,6 @@ const TodoList = () => {
             gap: "15px",
           }}
         >
-          {/* {open && (
-            <TextField
-              sx={{
-                width: "60%",
-                fontSize: "20px",
-                "& input": {
-                  width: "calc(100% - 60px)",
-                },
-              }}
-              type="text"
-              value={filterValue}
-              variant="standard"
-              onChange={(e) => setFilterValue(e.target.value)}
-              placeholder="Search here..."
-              InputProps={{
-                startAdornment: (
-                  <>
-                    <InputAdornment position="start">
-                      <SearchIcon />
-                    </InputAdornment>
-                    <InputAdornment
-                      sx={{
-                        position: "absolute",
-                        right: "0",
-                        cursor: "pointer",
-                      }}
-                    >
-                      {filterValue && (
-                        <ClearIcon onClick={() => setFilterValue("")} />
-                      )}
-                    </InputAdornment>
-                  </>
-                ),
-              }}
-            />
-          )} */}
           {paginatedTodos.length > 0 &&
             paginatedTodos.map((item, index) => (
               <Box
@@ -237,13 +185,6 @@ const TodoList = () => {
                 >
                   {item}
                 </Box>
-                {/* <Button
-                  sx={{ width: "10%" }}
-                  variant="contained"
-                  
-                >
-                  Edit
-                </Button> */}
                 <Box component="div" sx={{ display: "flex", gap: "18px" }}>
                   <svg
                     onClick={() => handleEditTodo(index)}
@@ -262,13 +203,6 @@ const TodoList = () => {
                       fill="#0A1629"
                     ></path>
                   </svg>
-                  {/* <Button
-                  sx={{ width: "10%" }}
-                  variant="contained"
-                  onClick={() => handleDeleteTodo(index)}
-                >
-                  Delete
-                </Button> */}
                   <svg
                     onClick={() => handleDeleteTodo(index)}
                     style={{ cursor: "pointer" }}
