@@ -44,5 +44,6 @@ body {
   background-position: 50%;
   background-attachment: fixed;
   height: 600px; */
-  background-color: #f0f2f5;
+  /* background-color: #f0f2f5; */
+  background-color: color(prophoto-rgb 0.42 0.46 0.8 / 0.14);
 }
