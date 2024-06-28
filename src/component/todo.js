@@ -18,7 +18,7 @@ const TodoList = () => {
   });
   const [inputValue, setInputValue] = useState("");
   const [editIndex, setEditIndex] = useState(null);
-  const [filterValue, setFilterValue] = useState("");
+  // const [filterValue, setFilterValue] = useState("");
   // const [open, setOpen] = useState(false);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -81,9 +81,9 @@ const TodoList = () => {
   };
 
   // Handle Search Todo List...
-  const filteredTodos = todos.filter((todo) =>
-    todo.toLowerCase().includes(filterValue.toLowerCase())
-  );
+  // const filteredTodos = todos.filter((todo) =>
+  //   todo.toLowerCase().includes(filterValue.toLowerCase())
+  // );
 
   const handleChangePage = ( newPage) => {
     setPage(newPage);
@@ -94,7 +94,7 @@ const TodoList = () => {
     setPage(0);
   };
 
-  const paginatedTodos = filteredTodos.slice(
+  const paginatedTodos = todos.slice(
     page * rowsPerPage,
     page * rowsPerPage + rowsPerPage
   );
@@ -292,12 +292,12 @@ const TodoList = () => {
           <Box
             sx={{ textAlign: "center", fontSize: "22px", fontWeight: "600" }}
           >
-            {filteredTodos.length === 0 && "No Data Found!"}
+            {todos.length === 0 && "No Data Found!"}
           </Box>
           <TablePagination
             rowsPerPageOptions={[5, 10, 15]}
             component="div"
-            count={filteredTodos.length}
+            count={todos.length}
             rowsPerPage={rowsPerPage}
             page={page}
             onPageChange={handleChangePage}
