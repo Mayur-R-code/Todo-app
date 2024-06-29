@@ -46,4 +46,22 @@ body {
   height: 600px; */
   /* background-color: #f0f2f5; */
   background-color: color(prophoto-rgb 0.42 0.46 0.8 / 0.14);
+  font-family: "IBM Plex Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+button {
+  background-color: rgb(0, 115, 230) !important;
+  box-shadow: rgb(51, 153, 255) 0px 2px 0px inset,
+    rgb(0, 97, 194) 0px -2px 0px inset, rgba(9, 11, 11, 0.1) 0px 2px 4px 0px;
+  font-family: "IBM Plex Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+.table-pagination button {
+  background-color: color(prophoto-rgb 0.42 0.46 0.8 / -0.86) !important;
+  box-shadow: none !important;
+}
+.modal-btn {
+  background-color: color(prophoto-rgb 0.42 0.46 0.8 / -0.86) !important;
+  box-shadow: none !important;
 }
