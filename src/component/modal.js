@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 // import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { Icon } from "@mui/material";
+import { Icon, IconButton } from "@mui/material";
 import { Close } from "@mui/icons-material";
 
 const style = {
@@ -23,7 +23,7 @@ const style = {
   },
 };
 
-export default function BasicModal({ children, setOpen, open }) {
+export default function BasicModal({ children, setOpen, open, modalTitle }) {
   // const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -37,25 +37,43 @@ export default function BasicModal({ children, setOpen, open }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Icon
-            onClick={handleClose}
+          <Box
+            component="div"
             sx={{
-              width: "100%",
               display: "flex",
-              justifyContent: "flex-end",
-              marginBottom: "20px",
-              cursor: "pointer",
+              width: "100%",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: "28px",
             }}
           >
-            <Close />
-          </Icon>
+            <Box
+              component="h3"
+              m={0}
+              sx={{ padding: "8px 0px", fontWeight: "500" }}
+            >
+              {modalTitle}
+            </Box>
+            <IconButton
+              onClick={handleClose}
+              sx={{
+                // width: "100%",
+                // display: "flex",
+                // justifyContent: "flex-end",
+                // marginBottom: "20px",
+                cursor: "pointer",
+              }}
+            >
+              <Close />
+            </IconButton>
+          </Box>
           <Typography
             id="modal-modal-title"
             component="div"
             display={"flex"}
             justifyContent={"space-between"}
             flexDirection={"column"}
-            gap={"93px"}
+            gap={"80px"}
           >
             {children}
           </Typography>
