@@ -54,13 +54,9 @@ export default function BasicModal({ children, setOpen, open, modalTitle }) {
             >
               {modalTitle}
             </Box>
-            <IconButton
+            <IconButton className="modal-btn"
               onClick={handleClose}
               sx={{
-                // width: "100%",
-                // display: "flex",
-                // justifyContent: "flex-end",
-                // marginBottom: "20px",
                 cursor: "pointer",
               }}
             >

@@ -236,6 +236,7 @@ const TodoList = () => {
               ))}
 
             <TablePagination
+              className="table-pagination"
               rowsPerPageOptions={[5, 10, 15]}
               component="div"
               count={todos.length}
