@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 // import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { Icon, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import { Close } from "@mui/icons-material";
 
 const style = {
