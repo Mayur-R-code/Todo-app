@@ -37,15 +37,8 @@
   }
 }
 body {
-  /* background-image: url("../public/bg.jpg");
-  font-family: "Josefin Sans", sans-serif;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50%;
-  background-attachment: fixed;
-  height: 600px; */
-  /* background-color: #f0f2f5; */
-  background-color: color(prophoto-rgb 0.42 0.46 0.8 / 0.14);
+  overflow-x: hidden;
+  width: 100%;
   font-family: "IBM Plex Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
@@ -65,9 +58,46 @@ button {
   background-color: color(prophoto-rgb 0.42 0.46 0.8 / -0.86) !important;
   box-shadow: none !important;
 }
-.swal2-confirm{
+.swal2-confirm {
   background-color: #7066e0 !important;
 }
-.swal2-cancel{
+.swal2-cancel {
   background-color: rgb(221, 51, 51) !important;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #c8c7c7;
+  border-radius: 50px;
+}
+.header {
+  background: "#FFFF";
+  box-shadow: "0 6px 58px rgba(196, 203, 214, .104)";
+}
+.light {
+  background-color: color(prophoto-rgb 0.42 0.46 0.8 / 0.14);
+  color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.dark {
+  transition: all 0.3s ease-in-out;
+  background-color: #000;
+  color: #fff;
+}
+.dark tr {
+  background-color: transparent;
+  box-shadow: inset 0 0 0.5px 1px hsl(0deg 0% 90.31% / 13.5%),
+    0 0 0 1px hsla(0, 0%, 0%, 0.05), 0 0.3px 0 hsla(0, 0%, 0%, 0.02),
+    0 0.9px 1.5px hsla(0, 0%, 0%, 0), 0 3.5px 6px hsla(0, 0%, 0%, 0);
+  border-radius: 8px;
+}
+.dark .svg-path {
+  fill: #fff;
 }
