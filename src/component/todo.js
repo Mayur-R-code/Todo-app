@@ -127,6 +127,7 @@ const TodoList = () => {
           </Box> */}
 
           <Button
+            className="modal-button"
             onClick={() => {
               setFormIsEdit(false);
               setOpenModal(true);
@@ -162,7 +163,11 @@ const TodoList = () => {
             variant="standard"
             onChange={(e) => setInputValue(e.target.value)}
           />
-          <Button variant="contained" onClick={handleAddOrEditTodo}>
+          <Button
+            variant="contained"
+            className="modal-button"
+            onClick={handleAddOrEditTodo}
+          >
             {formIsEdit ? "Update" : "Add task"}
           </Button>
         </BasicModal>
