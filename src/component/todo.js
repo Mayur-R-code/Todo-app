@@ -17,7 +17,6 @@ const TodoList = () => {
   });
   const [inputValue, setInputValue] = useState("");
   const [editIndex, setEditIndex] = useState(null);
-  console.log("editIndex: ", editIndex);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [openModal, setOpenModal] = useState(false);
@@ -44,7 +43,7 @@ const TodoList = () => {
       setEditIndex(null);
       toast.success("Task updated successfully");
     } else {
-      setTodos([...todos, inputValue]);
+      setTodos([inputValue, ...todos]);
       toast.success("Task added successfully");
       setFormIsEdit(false);
     }
