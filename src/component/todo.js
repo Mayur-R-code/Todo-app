@@ -75,8 +75,9 @@ const TodoList = () => {
 
   // Handle edit Todo...
   const handleEditTodo = (index) => {
-    setEditIndex(index);
-    setInputValue(todos[index]);
+    const edit_index = page * rowsPerPage + index;
+    setEditIndex(edit_index);
+    setInputValue(todos[edit_index]);
     setFormIsEdit(true);
     setOpenModal(true);
   };
